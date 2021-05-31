@@ -1,19 +1,19 @@
-package com.aos.user;
+package com.aos.account;
 
 import java.io.Serializable;
 
 
-public class User implements Serializable {
+public class Account implements Serializable {
     private String id;
     private String password;
 
     private int itemStart;
     private int itemSizePerPage;
 
-    public User() {
+    public Account() {
     }
 
-    public User(String id, String password, int itemStart, int itemSizePerPage) {
+    public Account(String id, String password, int itemStart, int itemSizePerPage) {
         this.id = id;
         this.password = password;
 

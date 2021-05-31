@@ -1,4 +1,4 @@
-package com.aos.user;
+package com.aos.account;
 
 import javax.validation.Valid;
 
@@ -14,9 +14,9 @@ import org.springframework.web.servlet.ModelAndView;
 
 @RestController
 @RequestMapping("/aos")
-public class UserController {
+public class AccountController {
 	@Autowired
-	private UserServiceImpl userService;
+	private AccountServiceimpl userService;
 	
 	
 	@GetMapping("/login")
@@ -27,7 +27,7 @@ public class UserController {
 	}
 	
 	@PostMapping("/login")
-	public ModelAndView login(@Valid User account, Errors errors) {
+	public ModelAndView login(@Valid Account account, Errors errors) {
 		if (errors.hasErrors()) {
 			ModelAndView modelAndView = new ModelAndView();
 			modelAndView.setViewName("redirect:/aos/login");
@@ -50,7 +50,7 @@ public class UserController {
 	
 	@InitBinder
 	protected void initBinder(WebDataBinder binder) {
-		binder.setValidator(new UserValidator());
+		binder.setValidator(new AccountValidator());
 	}
 	
 }
